@@ -37,6 +37,7 @@ trait FieldTrait {
                 break;
         }
         $this->say('VARDEFS:');
+		$this->say($name . " => ");
         $this->say(var_export($vardefs, true));
         $this->say('LANGUAGE:');
         $label_text = '$mod_strings[\'' . $lbl . '\'] => \'' . $label . '\';';
