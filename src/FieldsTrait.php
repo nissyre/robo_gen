@@ -8,7 +8,7 @@ trait FieldTrait {
            'name' => $name,
            'vname' => $lbl,
            'type' => $type,
-           'audited' => false,
+           'audited' => true,
            'importable' => true,
            'reportable' => true,
            'massupdate' => false,
@@ -19,6 +19,7 @@ trait FieldTrait {
             case 'text':
                 $vardefs['rows'] = 6;
                 $vardefs['cols'] = 80;
+				$vardefs['audited'] = false;
                 break;
             case 'multienum':
                 $list_name = $name . '_list';
@@ -35,6 +36,7 @@ trait FieldTrait {
                 $vardefs['duplicate_on_record_copy'] = 'always';
                 $vardefs['options'] = $list_name;
                 break;
+			
         }
         $this->say('VARDEFS:');
 		$this->say($name . " => ");
